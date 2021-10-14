@@ -1,0 +1,81 @@
+
+
+body {
+    
+    background: rgb(93,51,171);
+    background: linear-gradient(90deg, rgba(93,51,171,1) 24%, rgba(119,18,43,1) 100%, rgba(222,98,139,1) 100%, rgba(177,139,165,1) 100%, rgba(170,125,151,1) 100%, rgba(0,212,255,1) 100%);
+}
+
+h1 {
+
+    color:#fff;
+    margin:0 auto;
+}
+
+.q1{
+
+    background-color: blueviolet;
+    border-radius: 5px;
+    margin: 20px;
+    width: 120px;
+    list-style:"🧛‍♂️"
+
+    }
+
+
+
+
+.q2{
+
+    background-color: rgb(187, 36, 36);
+    border-radius: 5px;
+    margin: 20px;
+    width: 150px;
+    list-style:"🎃"
+    }
+
+    
+.q3{
+    background-color: rgb(212, 81, 114);
+    border-radius: 5px;
+    margin: 20px;
+    width: 180px;
+    list-style:"👻"
+    }
+
+    
+.q4{
+    background-color: rgb(103, 128, 13);
+    border-radius: 5px;
+    margin: 20px;
+    width: 210px;
+    list-style:"🔥"
+    }
+
+
+.title_quiz1  {
+    font-family: Brush Script MT;
+    text-indent: 20px;
+    
+}
+
+.div_enter{
+    border: red 5px dotted;
+    margin:0 auto;
+    width:200px;
+    border-radius:8px;
+    color:#fff;
+    font-weight:700;
+    text-align: center;
+    
+}
+
+.div_questions {
+    border: rgb(27, 25, 25) 5px dotted;
+    align-items: center;
+    width:300px;
+    margin:0 auto;
+    border-radius:8px;
+    
+}
+
