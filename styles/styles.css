@@ -59,7 +59,7 @@ h1 {
     
 }
 
-.div_enter{
+#div_enter{
     border: red 5px dotted;
     margin:0 auto;
     width:200px;
@@ -70,7 +70,7 @@ h1 {
     
 }
 
-.div_questions {
+#div_questions {
     border: rgb(27, 25, 25) 5px dotted;
     align-items: center;
     width:300px;
