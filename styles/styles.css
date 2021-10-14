@@ -66,8 +66,7 @@ h1 {
     border-radius:8px;
     color:#fff;
     font-weight:700;
-    text-align: center;
-    
+    text-align: center;    
 }
 
 #div_questions {
@@ -76,6 +75,7 @@ h1 {
     width:300px;
     margin:0 auto;
     border-radius:8px;
+    display: none;
     
 }
 
