@@ -11,12 +11,17 @@ const endpoint = 'https://opentdb.com/api.php?amount=10&difficulty=medium&type=m
 const getInfo = async () =>{
     const data = await fetch(endpoint)
     const json = await data.json()
+    console.log(json.results[0].incorrect_answers)
     let preguntas = []
+    let respuestas = []
     for(let i = 0; i < json.results.length ; i++){
        preguntas.push(json.results[i].question)
+       respuestas.push(json.results[i].incorrect_answers)
+       respuestas.push(json.results[i].correct_answer)
     }
-    return preguntas
+    
+    console.log(respuestas)
 }
 getInfo()
-    .then(data =>
-        console.log(data))
+//     .then(data =>
+//         console.log(data))
