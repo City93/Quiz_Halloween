@@ -43,10 +43,14 @@ const mes = hoy.getMonth();
 const anio = hoy.getFullYear();
 const hora = hoy.getHours();
 const min = hoy.getMinutes();
-const factual = anio+"-"+mes+"-"+day+" "+hora+":"+min
+const factual = anio+"-"+(mes+1)+"-"+day+" "+hora+":"+min
 
+console.log(hoy)
+console.log(mes+1)
 console.log(points)
 console.log(factual)
+
+
 const docRef = await addDoc(collection(db,"UserQuiz"),
 {
     name : usuarx,
