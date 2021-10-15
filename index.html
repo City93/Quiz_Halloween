@@ -7,7 +7,7 @@
     <title>Proyecto quiz </title>
     <link rel="stylesheet" href="./styles/styles.css">
     <script src="./scripts/scripts.js" defer></script>
-    <script src="./scripts/firebase.js" defer></script>
+    <script type="module" src="./scripts/firebase.js" defer></script>
 </head>
 <body class="body_index">
 <!-- Inicio -->
@@ -15,12 +15,12 @@
         <h1>Quiz Halloween</h1>
     </nav>
 
-    <div id="div_container">
+    <div id="btnuser">
         <div id="div_enter">
             <h3>Welcome to the quiz</h3>
             <label>Nombre</label>
             <input type="text" id="usuario">
-            <button onclick="" id='start'>Start</button>
+            <button id='start'>Start</button>
         </div>
 <!-- Parte de preguntas -->
         <div id="div_questions">
