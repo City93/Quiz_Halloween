@@ -4,4 +4,4 @@ const openQuestions = () =>{
         document.getElementById('div_questions').style.display = 'inherit';
     })
 }
-openQuestions()
+document.getElementById('bottom_index').addEventListener('click', () => nextQuestion())
