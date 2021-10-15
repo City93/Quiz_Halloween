@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2802c8cb15eac98489abdcee994f7dc0954f4562
 body {
     
     background: rgb(93,51,171);
@@ -65,8 +68,7 @@ h1 {
     border-radius:8px;
     color:#fff;
     font-weight:700;
-    text-align: center;
-    
+    text-align: center;    
 }
 
 #div_questions {
@@ -75,6 +77,7 @@ h1 {
     width:300px;
     margin:0 auto;
     border-radius:8px;
+    display: none;
     
 }
 
