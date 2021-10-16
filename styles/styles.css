@@ -1,18 +1,39 @@
 body {
 
-    background-image: url("/assets/images/cementery.png");
-    margin:0 auto;
-   
-/*     
-    background: rgb(93,51,171);
-    background: linear-gradient(90deg, rgba(93,51,171,1) 24%, rgba(119,18,43,1) 100%, rgba(222,98,139,1) 100%, rgba(177,139,165,1) 100%, rgba(170,125,151,1) 100%, rgba(0,212,255,1) 100%); */
+    background-image: url("/Quiz_Halloween/assets/images/cementery.png");
+
+/* Para dejar la imagen de fondo centrada, vertical yhorizontalmente */
+background-position: center center;
+
+/* Para que la imagen de fondo no se repita */
+background-repeat: no-repeat;
+
+/* La imagen se fija en la ventana de visualización para que la altura de la imagen no supere a la del contenido */
+background-attachment: fixed;
+
+/* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
+background-size: cover;
+
 }
+
+
+
+
 
 h1 {
 
     color:#fff;
-    margin:0 auto;
+    text-align: center;
+    font-family: 'Luckiest Guy', cursive;
 }
+
+h3 {
+
+    color:rgb(17, 16, 16);
+    text-align: center;
+    font-family: 'Luckiest Guy', cursive;
+}
+
 
 .q1{
 
@@ -24,7 +45,11 @@ h1 {
 
     }
 
-
+   .q1:hover {
+        background-color: #177edf;
+        color: white;
+    }
+    
 
 
 .q2{
@@ -36,6 +61,11 @@ h1 {
     list-style:"🎃"
     }
 
+    .q2:hover {
+        background-color: #177edf;
+        color: white;
+    }
+
     
 .q3{
     background-color: rgb(212, 81, 114);
@@ -45,6 +75,10 @@ h1 {
     list-style:"👻"
     }
 
+    .q3:hover {
+        background-color: #177edf;
+        color: white;
+    }
     
 .q4{
     background-color: rgb(103, 128, 13);
@@ -52,6 +86,11 @@ h1 {
     margin: 20px;
     width: 210px;
     list-style:"🔥"
+    }
+
+.q4:hover {
+        background-color: #177edf;
+        color: white;
     }
 
 
@@ -64,12 +103,15 @@ h1 {
 #div_enter{
     border: red 5px ridge;
     margin:0 auto;
-    width:400px;
+    width:500px;
     height: 200px;
     border-radius:8px;
     color:#fff;
     font-weight:700;
     text-align: center;    
+    background-color: rgb(247, 239, 247);
+   
+    
 }
 
 #div_questions {
@@ -81,3 +123,25 @@ h1 {
 
 }
 
+#div_questions:hover {
+    background-image: url("https://as01.epimg.net/epik/imagenes/2020/10/27/portada/1603786237_188260_1603792871_noticia_normal_recorte1.jpg");
+}
+
+
+
+#bottom_index:hover {
+    background-color: #df17c4;
+    color: white;
+}
+
+
+
+
+
+
+@media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ }
+@media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }
