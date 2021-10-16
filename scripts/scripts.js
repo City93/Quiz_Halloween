@@ -25,3 +25,4 @@ const getInfo = async () =>{
 getInfo()
 //     .then(data =>
 //         console.log(data))
+console.log('hello')
