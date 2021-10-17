@@ -1,7 +1,7 @@
 const openQuestions = () =>{
     document.getElementById('start').addEventListener('click',() =>{
-        document.getElementById('div_questions').style.display = 'default'
         document.getElementById('div_enter').style.display = 'none'
+        document.getElementById('div_questions').style.display = 'flex'
     })
 }
 openQuestions()
@@ -24,7 +24,6 @@ const getInfo = async () =>{
     return infoAPI = {respuestas,preguntas}
 }
 getInfo()
-<<<<<<< HEAD
     .then(infoAPI =>{
         document.getElementById('question').innerText = infoAPI.preguntas[1]
         document.getElementById('q1').innerText = infoAPI.respuestas[0][0]
@@ -34,8 +33,3 @@ getInfo()
         // console.log(infoAPI.respuestas[1])
     }
         )
-=======
-//     .then(data =>
-//         console.log(data))
-console.log('hello')
->>>>>>> e40a4051a1cb73ed41e0f0fa8f5a02e9152b2855
