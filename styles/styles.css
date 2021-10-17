@@ -1,6 +1,6 @@
 body {
 
-    background-image: url("/Quiz_Halloween/assets/images/cementery.png");
+    background-image: url("/assets/images/cementery.png");
 
 /* Para dejar la imagen de fondo centrada, vertical yhorizontalmente */
 background-position: center center;
@@ -106,12 +106,12 @@ h3 {
     width:500px;
     height: 200px;
     border-radius:8px;
-    color:#fff;
+    color:rgb(17, 16, 16);
     font-weight:700;
     text-align: center;    
     background-color: rgb(247, 239, 247);
     display: default;
-   
+    font-family: 'Luckiest Guy', cursive;
     
 }
 
