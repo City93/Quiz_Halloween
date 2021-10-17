@@ -18,24 +18,31 @@ import { getFirestore, collection, getDocs,setDoc, doc,addDoc,updateDoc, deleteF
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
-    /** *2 Crear Coleccion + ID autoamtico + Objeto**/
+   
+/**CREO EL EVENTO PARA TRAERME EL NOMBRE DEL BOTON *START */
+
+let name ='';
+
+const clicstart = () =>{
+    document.getElementById('start').addEventListener('click',getname =>{
+        document.body.style.background='gray';
+        name = document.getElementById("usuario").value
+        
+        console.log("DENTRO CLICK "+name)
+    })
+}
+
+
+clicstart ()
 
 
 
-const usuarx = "jalid"
+console.log(name)
 
-const q1=1
-const q2=1
-const q3=0
-const q4=1
-const q5=1
-const q6=0
-const q7=1
-const q8=1
-const q9=0
-const q10=1
 
-const points = q1+q2+q3+q4+q5+q6+q7+q8+q9+q10
+const usuarx = name
+
+const points = 0
 
 const hoy = new Date();
 const day = hoy.getDate();
@@ -45,11 +52,9 @@ const hora = hoy.getHours();
 const min = hoy.getMinutes();
 const factual = anio+"-"+(mes+1)+"-"+day+" "+hora+":"+min
 
-console.log(hoy)
-console.log(mes+1)
+
 console.log(points)
 console.log(factual)
-
 
 const docRef = await addDoc(collection(db,"UserQuiz"),
 {
@@ -59,5 +64,9 @@ const docRef = await addDoc(collection(db,"UserQuiz"),
  
 })
 
+console.log(docRef)
+
 console.log("Fin  firebase");
+
+document.getElementsByClassName("title_quiz1").innerHTML = "yourTextHere";
 
