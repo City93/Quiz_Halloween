@@ -1,3 +1,5 @@
+// Event listener que cambia el display de intro y preguntas para simular SPA
+
 const openQuestions = () =>{
     document.getElementById('start').addEventListener('click',() =>{
         document.getElementById('div_enter').style.display = 'none'
@@ -6,8 +8,10 @@ const openQuestions = () =>{
 }
 openQuestions()
 document.getElementById('bottom_index').addEventListener('click', () => nextQuestion())
-let respuestas = []
 
+//Fetch para recoger informacion de la API
+
+let respuestas = []
 const endpoint = 'https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple'
 const getInfo = async () =>{
     const data = await fetch(endpoint)
@@ -23,6 +27,9 @@ const getInfo = async () =>{
     
     return infoAPI = {respuestas,preguntas}
 }
+
+//Impresion de respuestas y preguntas
+
 getInfo()
     .then(infoAPI =>{
         document.getElementById('question').innerText = infoAPI.preguntas[1]
