@@ -7,7 +7,6 @@ const openQuestions = () =>{
     })
 }
 openQuestions()
-document.getElementById('bottom_index').addEventListener('click', () => nextQuestion())
 
 //Fetch para recoger informacion de la API
 
@@ -20,9 +19,9 @@ const getInfo = async () =>{
     let preguntas = []
     let respuestas = []
     for(let i = 0; i < json.results.length ; i++){
-       preguntas.push(json.results[i].question)
-       respuestas.push(json.results[i].incorrect_answers)
-       respuestas[i].push(json.results[i].correct_answer)
+        preguntas.push(json.results[i].question)
+        respuestas.push(json.results[i].incorrect_answers)
+        respuestas[i].push(json.results[i].correct_answer)
     }
     
     return infoAPI = {respuestas,preguntas}
@@ -30,13 +29,33 @@ const getInfo = async () =>{
 
 //Impresion de respuestas y preguntas
 
+
 getInfo()
-    .then(infoAPI =>{
-        document.getElementById('question').innerText = infoAPI.preguntas[1]
-        document.getElementById('q1').innerText = infoAPI.respuestas[0][0]
-        document.getElementById('q2').innerText = infoAPI.respuestas[0][1]
-        document.getElementById('q3').innerText = infoAPI.respuestas[0][2]
-        document.getElementById('q4').innerText = infoAPI.respuestas[0][3]
+.then(infoAPI =>{
+        let contador = 1;
+        document.getElementById('question').innerHTML = infoAPI.preguntas[0]
+        document.getElementById('q1').innerHTML = infoAPI.respuestas[0][0]
+        document.getElementById('q2').innerHTML = infoAPI.respuestas[0][1]
+        document.getElementById('q3').innerHTML = infoAPI.respuestas[0][2]
+        document.getElementById('q4').innerHTML = infoAPI.respuestas[0][3]
+        document.getElementById('bottom_index').addEventListener('click', () =>{
+            if(contador < 9){
+                contador++
+            document.getElementById('question').innerHTML = infoAPI.preguntas[contador]
+            document.getElementById('q1').innerHTML = infoAPI.respuestas[contador][0]
+            document.getElementById('q2').innerHTML = infoAPI.respuestas[contador][1]
+            document.getElementById('q3').innerHTML = infoAPI.respuestas[contador][2]
+            document.getElementById('q4').innerHTML = infoAPI.respuestas[contador][3]
+            console.log(contador)
+            } else{
+                document.getElementById('div_questions').style.display = 'none'
+                document.getElementById('div_results').style.display = 'inherit'
+            }
+        })
+        
+
+       
+        
         // console.log(infoAPI.respuestas[1])
     }
         )
