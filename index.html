@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto quiz </title>
     <link rel="stylesheet" href="./styles/styles.css">
+    <script src="./scripts/scripts.js" defer></script>
+    <script type="module" src="./scripts/firebase.js" defer></script>
 </head>
 <body class="body_index">
 <!-- Inicio -->
@@ -13,46 +15,46 @@
         <h1>Quiz Halloween</h1>
     </nav>
 
-    <div id="div_container">
+    <div id="btnuser">
         <div id="div_enter">
             <h3>Welcome to the quiz</h3>
             <label>Nombre</label>
-            <input type="text" id="usuario"  onclick="">
-            <button onclick="">Start</button>
+            <input type="text" id="usuario">
+            <button id='start'>Start</button>
         </div>
 <!-- Parte de preguntas -->
         <div id="div_questions">
             <form class="formulario" name="pregunta1">
                 <ul class="preguntas">
-                    <h1 class="title_quiz1">¿?</h1>
-                    <li class="q1">
+                    <h1 id="question">¿?</h1>
+                    <li class="q1" id='q1'>
                         <input type="radio" id="p1" name="p1" value="1">
                             <label for="p1"> </label><br>
                     </li>
-                    <li class="q2">
+                    <li class="q2" id='q2'>
                         <input type="radio" id="p2" name="p1" value="2">
                         <label for="p2"> </label><br>
                     </li>
-                    <li class="q3">
+                    <li class="q3" id='q3'>
                     <input type="radio" id="p3" name="p1" value="3">
                     <label for="p3"></label><br>
                     </li>
-                    <li class="q4">
+                    <li class="q4" id='q4'>
                         <input type="radio" id="p4" name="p1" value="4">
                         <label for="p3"> </label><br>
                     </li>
                     </ul>
         
-                    <button id="bottom_index" type="submit">Siguiente </button>
+                    <button id="bottom_index" type="button">Siguiente </button>
             </form>
         </div>
 <!-- Parte de los resultados y graficas -->
         <div id="div_results">
             <div id="score">
-
+                <p>Aqui van los resultados</p>
             </div>
             <div id="graphics">
-                
+                <p>Aquí va el gráfico</p>
             </div>
         </div>
       
