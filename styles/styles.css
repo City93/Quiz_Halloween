@@ -1,6 +1,6 @@
 body {
 
-    background-image: url("/assets/images/cementery.png");
+    background-image: url("../assets/images/cementery.png");
 
 /* Para dejar la imagen de fondo centrada, vertical yhorizontalmente */
 background-position: center center;
