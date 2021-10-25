@@ -16,7 +16,10 @@ background-size: cover;
 
 }
 
-
+main{
+    background-image: url("./calabaza.jpg");
+    background-repeat: no-repeat;
+}
 
 
 
