@@ -1,24 +1,15 @@
 body {
 
     background-image: url("../assets/images/cementery.png");
+    /* Para dejar la imagen de fondo centrada, vertical yhorizontalmente */
+    background-position: center center;
+    /* Para que la imagen de fondo no se repita */
+    background-repeat: no-repeat;
+    /* La imagen se fija en la ventana de visualización para que la altura de la imagen no supere a la del contenido */
+    background-attachment: fixed;
+    /* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
+    background-size: cover;
 
-/* Para dejar la imagen de fondo centrada, vertical yhorizontalmente */
-background-position: center center;
-
-/* Para que la imagen de fondo no se repita */
-background-repeat: no-repeat;
-
-/* La imagen se fija en la ventana de visualización para que la altura de la imagen no supere a la del contenido */
-background-attachment: fixed;
-
-/* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
-background-size: cover;
-
-}
-main{
-    background-image: no-repeat;;
-    width: 100vh;
-    height: 100%;
 }
 
 h1 {
@@ -115,17 +106,20 @@ li{
     
 }
 
+#btnuser{
+    display: flex;
+}
 #div_enter{
-    border: red 5px ridge;
+    border: rgb(243, 243, 243) 5px ridge;
     margin:0 auto;
     width:500px;
     height: 200px;
     border-radius:8px;
     color:rgb(17, 16, 16);
     font-weight:700;
-    text-align: center;    
+    text-align: center;   
     background-color: rgb(247, 239, 247);
-    display: default;
+    /*display: default;*/
     font-family: 'Luckiest Guy', cursive;
     
 }

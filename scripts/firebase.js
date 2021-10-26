@@ -25,11 +25,10 @@ let name ='';
 
 const clicstart = () =>{
     document.getElementById('start').addEventListener('click',getname =>{
-            
         name = document.getElementById("usuario").value
     
         
-        console.log("DENTRO CLICK "+name)
+        //console.log("DENTRO CLICK "+name)//
     })
 }
 
@@ -49,9 +48,9 @@ const hora = hoy.getHours();
 const min = hoy.getMinutes();
 const factual = anio+"-"+(mes+1)+"-"+day+" "+hora+":"+min
 
-
 //console.log(points)
 //console.log(factual)
+
 
 const docRef = await addDoc(collection(db,"UserQuiz"),
 {
