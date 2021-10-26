@@ -25,10 +25,9 @@ let name ='';
 
 const clicstart = () =>{
     document.getElementById('start').addEventListener('click',getname =>{
-        document.body.style.background='gray';
         name = document.getElementById("usuario").value
         
-        console.log("DENTRO CLICK "+name)
+        //console.log("DENTRO CLICK "+name)//
     })
 }
 
@@ -37,7 +36,7 @@ clicstart ()
 
 
 
-console.log(name)
+//console.log(name)//
 
 
 const usuarx = name
@@ -53,8 +52,8 @@ const min = hoy.getMinutes();
 const factual = anio+"-"+(mes+1)+"-"+day+" "+hora+":"+min
 
 
-console.log(points)
-console.log(factual)
+/*console.log(points)
+console.log(factual)*/
 
 const docRef = await addDoc(collection(db,"UserQuiz"),
 {
@@ -64,9 +63,9 @@ const docRef = await addDoc(collection(db,"UserQuiz"),
  
 })
 
-console.log(docRef)
+/*onsole.log(docRef)
 
-console.log("Fin  firebase");
+console.log("Fin  firebase");*/
 
 document.getElementsByClassName("title_quiz1").innerHTML = "yourTextHere";
 
