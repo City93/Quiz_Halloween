@@ -31,43 +31,50 @@ const getInfo = async () =>{
 }
 
 //Impresion de respuestas y preguntas
-
+let answerUser = []
 
 getInfo()
 .then(infoAPI =>{
-        console.log(infoAPI)
-        let contador = 1;
-        document.getElementById('question').innerHTML = infoAPI.preguntas[0]
-        document.getElementById('q1').innerHTML = infoAPI.respuestas[0][0]
-        document.getElementById('q2').innerHTML = infoAPI.respuestas[0][1]
-        document.getElementById('q3').innerHTML = infoAPI.respuestas[0][2]
-        document.getElementById('q4').innerHTML = infoAPI.respuestas[0][3]
-        document.getElementById('bottom_index').addEventListener('click', () =>{
-            if(contador < 9){
-                contador++
-            document.getElementById('question').innerHTML = infoAPI.preguntas[contador]
-            document.getElementById('q1').innerHTML = infoAPI.respuestas[contador][0]
-            document.getElementById('q2').innerHTML = infoAPI.respuestas[contador][1]
-            document.getElementById('q3').innerHTML = infoAPI.respuestas[contador][2]
-            document.getElementById('q4').innerHTML = infoAPI.respuestas[contador][3]
-            console.log(contador)
-            } else{
-                document.getElementById('div_questions').style.display = 'none'
-                document.getElementById('div_results').style.display = 'inherit'
-            }
-            document.getElementById('question').addEventListener('click', () =>{
-                console.log(infoAPI.correctas[contador])
-                console.log(document.getElementById)
-            })
-        })
-        
-
-       
-        
+        // console.log(infoAPI)
+        let contador = 0;
+        for(let i = 1; i < 20; i++){
+            document.getElementById('question').innerHTML = infoAPI.preguntas[0]
+            document.getElementById('q1').innerHTML = infoAPI.respuestas[0][0]
+            document.getElementById('q2').innerHTML = infoAPI.respuestas[0][1]
+            document.getElementById('q3').innerHTML = infoAPI.respuestas[0][2]
+            document.getElementById('q4').innerHTML = infoAPI.respuestas[0][3]
+            document.getElementById(`q${i}`).addEventListener('click', () =>{
+                answerUser.push(document.getElementById(`q${i}`).innerHTML)
+                console.log(infoAPI.correctas)
+                if(contador < 9){
+                    contador++
+                document.getElementById('question').innerHTML = infoAPI.preguntas[contador]
+                document.getElementById('q1').innerHTML = infoAPI.respuestas[contador][0]
+                document.getElementById('q2').innerHTML = infoAPI.respuestas[contador][1]
+                document.getElementById('q3').innerHTML = infoAPI.respuestas[contador][2]
+                document.getElementById('q4').innerHTML = infoAPI.respuestas[contador][3]
+                console.log(contador)
+                } else{
+                    document.getElementById('div_questions').style.display = 'none'
+                    document.getElementById('div_results').style.display = 'inherit'
+                }
+                document.getElementById('question').addEventListener('click', () =>{
+                })
+                console.log(answerUser)
+            })     
+        }
         // console.log(infoAPI.respuestas[1])
     }
         )
 
-        document.getElementById('q1').addEventListener('click', function() {
-            console.log('You selected: ', this.innerText);
-          });
+let array1 = ['cosa1', 'cosa2', 'cosa3']
+let array2 = ['cosa1', 'cosa2', 'cosa4']
+let resultado = array1.map((el,i) => {
+    if(el == array2[i]){
+        return true
+    } else {
+        return false
+    }
+})
+console.log(resultado)
+
