@@ -27,19 +27,19 @@ const clicstart = () =>{
     document.getElementById('start').addEventListener('click',getname =>{
             
         name = document.getElementById("usuario").value
+    
         
-       // console.log("DENTRO CLICK "+name)
+        console.log("DENTRO CLICK "+name)
     })
 }
 
 
-clicstart ()
 
-//console.log(name)
+//console.log("1"+name)
 
-const usuarx = name
+const usuarx = name;
 
-const points = 0
+const points = 0;
 
 const hoy = new Date();
 const day = hoy.getDate();
@@ -66,4 +66,5 @@ const docRef = await addDoc(collection(db,"UserQuiz"),
 //console.log("Fin  firebase");
 
 document.getElementsByClassName("title_quiz1").innerHTML = "yourTextHere";
+
 
