@@ -1,0 +1,74 @@
+body {
+
+    background-image: url("../assets/images/calabaza.jpg");
+    /* Para dejar la imagen de fondo centrada, vertical yhorizontalmente */
+    background-position: center center;
+    /* Para que la imagen de fondo no se repita */
+    background-repeat: no-repeat;
+    /* La imagen se fija en la ventana de visualización para que la altura de la imagen no supere a la del contenido */
+    background-attachment: fixed;
+    /* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
+    background-size: cover;
+
+}
+
+h1 {
+
+    color:rgb(200, 133, 6);
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    padding: 20px;
+    text-shadow: 2px 4px 2px rgb(250, 247, 247); 
+   
+}
+nav{
+    font-size:25px;
+}
+h2{
+
+color:#fff;
+text-align: center;
+font-family: 'Luckiest Guy', cursive;
+}
+
+#div_results{
+    display: flex;
+    flex-direction: row;
+}
+#graphics{
+    justify-content: left;
+    border:2px red;
+}
+#score{
+    justify-content: left;
+}
+
+p{
+    font-family: 'Qahiri', sans-serif;
+    font-size: 50px;
+    align-items: center;
+    color: white;
+    padding: 30px 30px;
+    margin-left: 10px;
+   
+}
+/* Use this selector to override the line style on a given series */
+.ct-series-a .ct-line {
+    /* Set the colour of this series line */
+    stroke: rgb(221, 147, 35);
+    /* Control the thikness of your lines */
+    stroke-width: 2px;
+    /* Create a dashed line with a pattern */
+    stroke-dasharray: 10px 20px;
+  }
+  
+  /* This selector overrides the points style on line charts. Points on line charts are actually just very short strokes. This allows you to customize even the point size in CSS */
+  .ct-series-a .ct-point {
+    /* Colour of your points */
+    stroke: rgb(201, 159, 69);
+    /* Size of your points */
+    stroke-width: 10px;
+    /* Make your points appear as squares */
+    stroke-linecap: square;
+  }
+

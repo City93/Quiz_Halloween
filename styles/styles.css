@@ -14,9 +14,15 @@ body {
 
 h1 {
 
-    color:#fff;
+    color:rgb(14, 14, 14);
     text-align: center;
-    font-family: 'Luckiest Guy', cursive;
+    font-family: 'Permanent Marker', cursive;
+    padding: 20px;
+    text-shadow: 2px 4px 2px rgb(250, 247, 247); 
+   
+}
+nav{
+    font-size:25px;
 }
 h2{
 
@@ -39,10 +45,10 @@ li{
 
 .q1{
 
-    background-color: blueviolet;
+    background-color: #9370db;
     border-radius: 5px;
     margin: 20px;
-    width: 120px;
+    width: 350px;
     height: 30px;
     list-style:"🧛‍♂️"
 
@@ -60,7 +66,7 @@ li{
     background-color: rgb(187, 36, 36);
     border-radius: 5px;
     margin: 20px;
-    width: 150px;
+    width: 350px;
     height: 30px;
     list-style:"🎃"
     }
@@ -75,7 +81,7 @@ li{
     background-color: rgb(212, 81, 114);
     border-radius: 5px;
     margin: 20px;
-    width: 180px;
+    width: 350px;
     height: 30px;
     list-style:"👻"
     }
@@ -89,7 +95,7 @@ li{
     background-color: rgb(103, 128, 13);
     border-radius: 5px;
     margin: 20px;
-    width: 210px;
+    width: 350px;
     height: 30px;
     list-style:"🔥"
     }
@@ -110,7 +116,8 @@ li{
     display: flex;
 }
 #div_enter{
-    border: rgb(243, 243, 243) 5px ridge;
+    border: rgb(255, 255, 255) 5px ridge;
+    box-shadow: 6px 8px 8px rgb(87, 83, 83);
     margin:0 auto;
     width:500px;
     height: 200px;
@@ -119,7 +126,7 @@ li{
     font-weight:700;
     text-align: center;   
     background-color: rgb(247, 239, 247);
-    /*display: default;*/
+    display: default;
     font-family: 'Luckiest Guy', cursive;
     
 }
@@ -127,6 +134,7 @@ li{
 #div_questions {
     border: rgb(233, 225, 225) 5px ridge;
     width: 75vh;
+    height: 50vh;
     margin:0 auto;
     padding: 5px 30px;
     border-radius:1px;
@@ -138,8 +146,8 @@ li{
 
 #div_questions:hover {
     background-image: url("https://as01.epimg.net/epik/imagenes/2020/10/27/portada/1603786237_188260_1603792871_noticia_normal_recorte1.jpg");
+    background-size: cover;
 }
-
 
 
 #bottom_index:hover {
@@ -147,18 +155,21 @@ li{
     color: white;
 }
 
-#div_results{
-    display: none;
+
+
+ 
+
+@media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ 
+
+
+
 }
-
-
-
-
-
-
-@media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ }
 @media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
 @media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
 @media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
-@media (min-width:1281px) { /* hi-res laptops and desktops */ }
+
+@media (min-width:1281px) { /* hi-res laptops and desktops */ 
+    
+   
+}
