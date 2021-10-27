@@ -57,6 +57,15 @@ getInfo()
                 } else{
                     document.getElementById('div_questions').style.display = 'none'
                     document.getElementById('div_results').style.display = 'inherit'
+                    let resultado = answerUser.map((el,i) =>{
+                        if(el == infoAPI[i]){
+                            return true
+                        } else {
+                            return false
+                        }
+                    })
+                    let resultado2 =resultado.filter((el) => el == true)
+                    console.log(resultado2)
                 }
                 document.getElementById('question').addEventListener('click', () =>{
                 })
@@ -77,4 +86,3 @@ let resultado = array1.map((el,i) => {
     }
 })
 console.log(resultado)
-
