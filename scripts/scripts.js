@@ -28,17 +28,14 @@ const getInfo = async () =>{
     // Del fetch sacamos un objeto con 3 elementos (respuestas (son 10 elementos con 4 respuestas en cada uno), preguntas y un array con las respuestas correctas.
     return infoAPI = {respuestas,preguntas,correctas}
 }
+
+// Funcion sacada de ese maravilloso lugar llamado internet para cambiar la posicion del array de repuestas para que la correcta esté en distinta posicion.
+
 function shuffle(array) {
     let currentIndex = array.length,  randomIndex;
-  
-    // While there remain elements to shuffle...
     while (currentIndex != 0) {
-  
-      // Pick a remaining element...
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
-  
-      // And swap it with the current element.
       [array[currentIndex], array[randomIndex]] = [
         array[randomIndex], array[currentIndex]];
     }
@@ -51,9 +48,6 @@ function shuffle(array) {
 let answerUser = []
 getInfo()
 .then(infoAPI =>{
-        // console.log(infoAPI)
-        let respuestas = infoAPI.respuestas
-        shuffle(arr);
         let contador = 0;
         for(let i = 1; i < 20; i++){
             //Primero hay que establecer una impresion de la primera pregunta y respuestas
@@ -100,7 +94,3 @@ getInfo()
         }
         // console.log(infoAPI.respuestas[1])
     })
-
-    var arr = [2, 11, 37, 42];
-shuffle(arr);
-console.log(arr);
