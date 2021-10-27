@@ -1,5 +1,5 @@
 // Event listener que cambia el display de intro y preguntas para simular SPA
-
+localStorage.setItem('score', '0')
 const openQuestions = () =>{
     document.getElementById('start').addEventListener('click',() =>{
         document.getElementById('div_enter').style.display = 'none'
@@ -32,7 +32,7 @@ const getInfo = async () =>{
 
 //Impresion de respuestas y preguntas
 let answerUser = []
-
+let score = 0
 getInfo()
 .then(infoAPI =>{
         // console.log(infoAPI)
@@ -45,7 +45,7 @@ getInfo()
             document.getElementById('q4').innerHTML = infoAPI.respuestas[0][3]
             document.getElementById(`q${i}`).addEventListener('click', () =>{
                 answerUser.push(document.getElementById(`q${i}`).innerHTML)
-                console.log(infoAPI.correctas)
+                // console.log(infoAPI.correctas)
                 if(contador < 9){
                     contador++
                 document.getElementById('question').innerHTML = infoAPI.preguntas[contador]
@@ -57,32 +57,43 @@ getInfo()
                 } else{
                     document.getElementById('div_questions').style.display = 'none'
                     document.getElementById('div_results').style.display = 'inherit'
-                    let resultado = answerUser.map((el,i) =>{
-                        if(el == infoAPI[i]){
+                    console.log(infoAPI.correctas)
+                    console.log(answerUser)
+                    localStorage.setItem('score', JSON.stringify({
+                        score: infoAPI.correctas.map((el,i) => {
+                            if(el == answerUser[i]){
+                                return true
+                            } else {
+                                return false
+                            }
+                        }).filter(Boolean).length
+                    }))
+                    infoAPI.correctas.map((el,i) => {
+                        if(el == answerUser[i]){
                             return true
                         } else {
                             return false
                         }
-                    })
-                    let resultado2 =resultado.filter((el) => el == true)
-                    console.log(resultado2)
+                    }).filter(Boolean).length
                 }
                 document.getElementById('question').addEventListener('click', () =>{
                 })
-                console.log(answerUser)
+
             })     
         }
         // console.log(infoAPI.respuestas[1])
     }
         )
 
-let array1 = ['cosa1', 'cosa2', 'cosa3']
-let array2 = ['cosa1', 'cosa2', 'cosa4']
-let resultado = array1.map((el,i) => {
-    if(el == array2[i]){
-        return true
-    } else {
-        return false
-    }
-})
-console.log(resultado)
+
+console.log('esto es score-->' + score)
+
+// let array1 = ['cosa1', 'cosa2', 'cosa3']
+// let array2 = ['cosa1', 'cosa2', 'cosa3']
+// let resultado = array1.map((el,i) => {
+//     if(el == array2[i]){
+//         return true
+//     } else {
+//         return false
+//     }
+// }).filter(Boolean).length
