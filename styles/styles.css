@@ -36,12 +36,21 @@ h3 {
 
     color:rgb(17, 16, 16);
     text-align: center;
-    font-family: 'Luckiest Guy', cursive;
+    font-family: 'Irish Grover', cursive;
+    font-size: 25px;
+}
+.login{
+    display: flex;
+    justify-content: center;
 }
 
-li{
+form{
+    font-family: 'Poppins', sans-serif;
+    align-items: center;
+}
 
-    font-family: 'Luckiest Guy', cursive;
+input{
+    margin-bottom: 10px;
 }
 
 .q1{
@@ -128,7 +137,7 @@ li{
     text-align: center;   
     background-color: rgb(247, 239, 247);
     display: default;
-    font-family: 'Luckiest Guy', cursive;
+ 
     
 }
 
