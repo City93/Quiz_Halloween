@@ -21,28 +21,24 @@ const firebaseConfig = {
     const auth = getAuth(app);
 
    
-
-
-
-const score = 0;
-
-const hoy = new Date();
-const day = hoy.getDate();
-const mes = hoy.getMonth();
-const anio = hoy.getFullYear();
-const hora = hoy.getHours();
-const min = hoy.getMinutes();
-const factual = anio+"-"+(mes+1)+"-"+day+" "+hora+":"+min
+//GEnero las variables de Score y factual para capturar el momento de jugar
+    const score = 0;
+    const hoy = new Date();
+    const day = hoy.getDate();
+    const mes = hoy.getMonth();
+    const anio = hoy.getFullYear();
+    const hora = hoy.getHours();
+    const min = hoy.getMinutes();
+    const factual = anio+"-"+(mes+1)+"-"+day+" "+hora+":"+min
 
 
 
 /**BOTON CLICK PARA NUEVAS CUENTAS **/
+    const userid ='';
 
-const userid ='';
+    if(document.getElementById("btloguin") != null){
 
-if(document.getElementById("btloguin") != null){
-
-  document.getElementById("btloguin").addEventListener("click", ()=> {
+        document.getElementById("btloguin").addEventListener("click", ()=> {
   
              const email = document.getElementById("emailloguin").value 
              const password = document.getElementById("pswloguin").value 
@@ -54,50 +50,45 @@ if(document.getElementById("btloguin") != null){
                   const user = userCredential.user;
                    userid= user.uid
 
-                 
-  
                 })
                 .catch((error) => {
                   const errorCode = error.code;
                   const errorMessage = error.message;
-                     console.log(errorCode+errorMessage)
-                  alert("Cuenta o contaseña Incorrecta")
+                  console.log(errorCode+errorMessage)
+               
                 });
-  
-  
           })
 }
 
 console.log(userid)
 
-
-        /*** BOTON PASSS LOGUININ */
-
-        document.getElementById("start").addEventListener("click", ()=> {
-            console.log("entra sigIn")
-            const email = document.getElementById("emailloginIn").value 
-            const password = document.getElementById("pswloguinIn").value 
+/*** BOTON PASSS LOGUININ */
+    document.getElementById("start").addEventListener("click", ()=> {
+    console.log("entra sigIn")
+    const email = document.getElementById("emailloginIn").value 
+    const password = document.getElementById("pswloguinIn").value 
           
-            signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                // Signed in
-                const user = userCredential.user;
+signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        /**Aqui capturo del objeto user el .uid y el .email y lo meto en la coleccion "user"* **/
+        setDoc (doc(db,"User",user.uid),{
+        email: email,
+        uid : userid ,
+        score : score
 
-                 /**Aqui capturo del objeto user el .uid y el .email y lo meto en la coleccion "user"* **/
-                 setDoc (doc(db,"User",user.uid),{
-                    email: email,
-                    uid : userid ,
-                    score : score
-                    });
+        });
                     // ...
                 alert("Loguin Correcto Bienvenido al Quiz")
+                alert(userid)
                 //location.reload();
         })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log(errorCode+errorMessage)
-                alert("Cuenta o contaseña Incorrecta")
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode+errorMessage)
+            alert("Cuenta o contaseña Incorrecta")
     });
           
 })
@@ -129,29 +120,32 @@ console.log(auth)
 
 
 
-/*PARA CAPTURAR EL ID DEL JUGADOR EN CURSO Y SETEARLE LA PUNTUACION AL FINAL*/
+/*PARA CAPTURAR EL ID DEL JUGADOR EN CURSO Y SETEARLE LA PUNTUACION AL FINAL
 
 
 const UpdateScore = doc(db, "User", "iZUZjQhnEGN0dyZwPfnQASGyBZX2");
 await updateDoc(UpdateScore, {
   score: 6
-});
+});*/
 
 
 
 /*PARA TRAER LOS NOMBRES Y PUNTUACIONES PARA LA GRAFICA*/
+let nombre=''
+let scorebck=''
 
 const querySnapshot = await getDocs(collection(db, "User"));
 querySnapshot.forEach((doc) => {
   // doc.data() is never undefined for query doc snapshots
   
-  const nombre= doc.data().email;
-  const score = doc.data().score;
-  console.log(nombre,score)
+   nombre= doc.data().email;
+   scorebck = doc.data().score; 
+   console.log(nombre,scorebck)
 
  // return nombre,score
 });
 
+console.log(nombre,scorebck)
 
 //console.log("Fin  firebase");
 
