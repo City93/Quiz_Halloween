@@ -29,6 +29,7 @@ h2{
 color:#fff;
 text-align: center;
 font-family: 'Luckiest Guy', cursive;
+margin-bottom: 125px;
 }
 
 h3 {
@@ -140,6 +141,7 @@ li{
     border-radius:1px;
     background: rgb(28, 28, 29);
     display:none;
+    align-items: center;
 
 }
 

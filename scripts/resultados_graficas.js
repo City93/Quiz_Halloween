@@ -25,23 +25,36 @@ async function inforanking(){
 inforanking()*/
 
 
-// Create a simple line chart
-const data = {
-    // A labels contiene la puntuacion
-    labels: ['Maria', 'Pepe', 'Juan','Roci'],
-    // Our series contiene las preguntas
-    series: [
-      [1,2,3,4,5,6,7,8,9,10]
+
+  let data = {
+    labels: ['Maria', 'Ppe', 'Juno'],
+      series: [
+      [0, 1, 2, 3, 4, 5, 6, 7],
+     
     ]
   };
   
-  // tamaño de la grafica
-  const options = {
-    width: '500px',
-    height: '300px'
+  let options = {
+    seriesBarDistance: 15
   };
   
-  // 
-//En el espacio de nombres global Chartist, llamamos a la función Line para inicializar un gráfico de líneas. Como primer parámetro, pasamos un selector donde nos gustaría crear nuestro gráfico. El segundo parámetro es el objeto de datos real y como tercer parámetro pasamos nuestras opciones
-  new Chartist.Line('.ct-chart', data, options);
- 
+  let responsiveOptions = [
+    ['screen and (min-width: 641px) and (max-width: 1024px)', {
+      seriesBarDistance: 10,
+      axisX: {
+        labelInterpolationFnc: function (value) {
+          return value;
+        }
+      }
+    }],
+    ['screen and (max-width: 640px)', {
+      seriesBarDistance: 5,
+      axisX: {
+        labelInterpolationFnc: function (value) {
+          return value[0];
+        }
+      }
+    }]
+  ];
+  
+  new Chartist.Bar('.ct-chart', data, options, responsiveOptions);
