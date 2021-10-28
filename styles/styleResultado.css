@@ -1,0 +1,56 @@
+ /* body {
+
+  background-image: url("../assets/images/calabaza.jpg");
+    /* Para dejar la imagen de fondo centrada, vertical yhorizontalmente 
+    background-position: center center;
+    /* Para que la imagen de fondo no se repita 
+    background-repeat: no-repeat;
+    /* La imagen se fija en la ventana de visualización para que la altura de la imagen no supere a la del contenido 
+    background-attachment: fixed;
+    /* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador 
+    background-size: cover;
+
+}*/
+
+h1 {
+
+    color:rgb(200, 133, 6);
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    padding: 20px;
+    text-shadow: 2px 4px 2px rgb(250, 247, 247); 
+   
+}
+
+nav{
+    font-size:25px;
+}
+h2{
+
+color:rgb(0, 0, 0);
+text-align: center;
+font-family: 'Luckiest Guy', cursive;
+}
+
+#div_results{
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+}
+#graphics{
+    
+    border:2px red;
+}
+#score{
+    border:2px red;
+}
+
+p{
+    font-family: 'Qahiri', sans-serif;
+    font-size: 50px;
+    align-items: center;
+    color: rgb(3, 3, 3);
+    padding: 30px 30px;
+    margin-left: 10px;
+   
+}

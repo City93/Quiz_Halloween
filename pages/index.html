@@ -5,14 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto quiz </title>
-    <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="stylesheet" href="./styles/normalize.css">
-    
-    <script src="./scripts/scripts.js" defer></script>
-    <script type="module" src="./scripts/firebase.js" defer></script>
+
+    <link rel="stylesheet" href="../styles/styles.css">
+<!--link normalize-->
+    <link rel="stylesheet" href="../styles/normalize.css">
+<!--link scripts-->
+    <script src="../scripts/scripts.js" defer></script>
+    <script type="module" src="../scripts/firebase.js" defer></script>
+    <script defer src="../scripts/resultados_graficas.js"></script>
+
+<!--links para estilo de letras-->
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Zen+Maru+Gothic:wght@300;500&display=swap" rel="stylesheet">
+
 </head>
     <body class="body_index" id="body_index2">
-        <main id="main">
         <!-- Inicio -->
             <nav>
                 <h1>Quiz Halloween</h1>
@@ -48,25 +54,10 @@
                             </li>
                             </ul>
                 
-                            <button id="bottom_index" type="button">Siguiente </button>
+                            <!--<button id="bottom_index" type="button">Siguiente </button>-->
                     </form>
                 </div>
-        <!-- Parte de los resultados y graficas -->
-                <div id="div_results">
-                    <div id="score">
-                        <p>Aqui van los resultados</p>
-                    </div>
-                    <div id="graphics">
-                        <p>Aquí va el gráfico</p>
-                    </div>
-                </div>
-              
+        
            </div>
-
-        </main> 
-     </body>
-
-
-
-
+    </body>
 </html>
