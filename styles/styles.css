@@ -84,10 +84,14 @@ h3 {
 }
 
 /*Estilo de formulario-preguntas*/
+
 form{
     font-family: 'Luckiest Guy', cursive;
     align-items: center;
     
+}
+.preguntas{
+    margin-left: 45px;
 }
 
 .q1{
