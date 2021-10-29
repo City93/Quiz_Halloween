@@ -25,9 +25,9 @@ async function inforanking(){
 inforanking()*/
 
 var data = {
-  labels: ['Maria', 'Pepe', 'Lui'],
+    labels: ['Maria', 'Pepe', 'Lui','Momo'],
     series: [
-    [1,2,3],
+    [10,8,3,5],
    
   ]
 };
@@ -35,7 +35,7 @@ var data = {
 var options = {
   seriesBarDistance: 15,
     width: 450,
-    height: 300,
+    height: 250,
     
     
   };

@@ -74,24 +74,31 @@ p{
     stroke-width: 50px;
     
   }
-
-/* smartphones, iPhone, portrait 480x320 phones */ 
-  @media (min-width:320px)  { 
+/* --------Responsive---------------*/
 
 
-
-  }
-
-  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
-  @media (min-width:641px)  {  
-
+@media screen and (max-width: 768px) {
+    #div_results{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: -6px;
+        /*border:2px black solid;*/
+    }
     
-  }
-
-  /* big landscape tablets, laptops, and desktops */
-  @media (min-width:1025px) {  
-
+    #graphics{
+        width: 500px;
+        /*border:2px rgb(0, 255, 21) solid;*/
+        align-items: center;
+        margin-top: 20px;
+        margin-left: 80px;
+    }
     
-  }
-  
-  
+    #score{
+        width: 500px;
+        align-items: center;
+        margin-left: 80px;
+        margin-top: -50px;
+        /*border: rgb(0, 60, 255) solid 1px;*/
+    }
+}
