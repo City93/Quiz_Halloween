@@ -1,28 +1,17 @@
-/*variables que vamos a utilizar //
+/*leer una coleccion de firebase
+const q=query(colecction(db,"UserQuiz));
+let ranqkinUrl;
+let grapichsDate;
+let graficpoints;
 
-let usuario;
-let score;
-const urlApi=('');
+const querySnapshot=await getDocs(q);
 
-/*Fetch para traer datos de Firebase
-async function inforanking(){
-  let films = await fetch(`${urlApi}//`)
-      .then(res=>res.json()) //la pasa a Json
-      .then(response => { //Nos traemos el Json
-          console.log(response)
-          for (let i=0; i<response.results.length; i++){ //creamos un bucle for  para pasar por todos los titulos
-              usuario.push(response.results[i].title)//Tenemos que para el push para incluir titulo
-              score.push(response.results[i].release_date.substring(0,4)) // año pelicula
-              
-          }  
-          graphic (usuario,score) //
-      }) 
-      .catch(error=>console.log(error));
-  }
+querySnapshot.forEach(doc) => {
+  ranqkinUrl=doc.data ()
+  grapichsDate.push(ranqkinUrl.date)
+  grapichsDate.push(ranqkinUrl.goodAnswers)
 
-      
-
-inforanking()*/
+});*/
 
 var data = {
     labels: ['Maria', 'Pepe', 'Lui','Momo'],
