@@ -1,60 +1,55 @@
-/*variables que vamos a utilizar //
+/*leer una coleccion de firebase
+const q=query(colecction(db,"UserQuiz));
+let ranqkinUrl;
+let grapichsDate;
+let graficpoints;
 
-let usuario;
-let score;
-const urlApi=('');
+const querySnapshot=await getDocs(q);
 
-/*Fetch para traer datos de Firebase
-async function inforanking(){
-  let films = await fetch(`${urlApi}//`)
-      .then(res=>res.json()) //la pasa a Json
-      .then(response => { //Nos traemos el Json
-          console.log(response)
-          for (let i=0; i<response.results.length; i++){ //creamos un bucle for  para pasar por todos los titulos
-              usuario.push(response.results[i].title)//Tenemos que para el push para incluir titulo
-              score.push(response.results[i].release_date.substring(0,4)) // año pelicula
-              
-          }  
-          graphic (usuario,score) //
-      }) 
-      .catch(error=>console.log(error));
-  }
+querySnapshot.forEach(doc) => {
+  ranqkinUrl=doc.data ()
+  grapichsDate.push(ranqkinUrl.date)
+  grapichsDate.push(ranqkinUrl.goodAnswers)
 
-      
+});*/
 
-inforanking()*/
+var data = {
+    labels: ['Maria', 'Pepe', 'Lui','Momo'],
+    series: [
+    [10,8,3,5],
+   
+  ]
+};
 
-
-
-  let data = {
-    labels: ['Maria', 'Ppe', 'Juno'],
-      series: [
-      [0, 1, 2, 3, 4, 5, 6, 7],
-     
-    ]
+var options = {
+  seriesBarDistance: 15,
+    width: 450,
+    height: 250,
+    
+    
   };
   
-  let options = {
-    seriesBarDistance: 15
-  };
-  
-  let responsiveOptions = [
-    ['screen and (min-width: 641px) and (max-width: 1024px)', {
-      seriesBarDistance: 10,
-      axisX: {
-        labelInterpolationFnc: function (value) {
-          return value;
-        }
+
+
+var responsiveOptions = [
+  ['screen and (min-width: 641px) and (max-width: 1024px)', {
+    seriesBarDistance: 5,
+    axisX: {
+      labelInterpolationFnc: function (value) {
+        return value;
       }
-    }],
-    ['screen and (max-width: 640px)', {
-      seriesBarDistance: 5,
-      axisX: {
-        labelInterpolationFnc: function (value) {
-          return value[0];
-        }
+    }
+  }],
+  ['screen and (max-width: 640px)', {
+    seriesBarDistance: 3,
+    axisX: {
+      labelInterpolationFnc: function (value) {
+        return value[0];
       }
-    }]
-  ];
+    }
+  }]
+];
+
+new Chartist.Bar('.ct-chart', data, options, responsiveOptions);
   
-  new Chartist.Bar('.ct-chart', data, options, responsiveOptions);
+ 

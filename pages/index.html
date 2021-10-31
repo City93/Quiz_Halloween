@@ -16,6 +16,8 @@
 
 <!--links para estilo de letras-->
 <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Zen+Maru+Gothic:wght@300;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Permanent+Marker&family=Qahiri&family=Zen+Kurenaido&family=Zen+Maru+Gothic:wght@300;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Permanent+Marker&family=Poppins:wght@300&family=Qahiri&family=Zen+Kurenaido&family=Zen+Maru+Gothic:wght@300;500&display=swap" rel="stylesheet">
 
 </head>
     <body class="body_index" id="body_index2">
@@ -23,14 +25,40 @@
             <nav>
                 <h1>Quiz Halloween</h1>
             </nav>
-        
+        <!--Pagina de inicio-->
             <div id="btnuser">
                 <div id="div_enter">
                     <h3>Welcome to the quiz</h3>
-                    <label>Nombre</label>
+                    <!-- <label>Nombre</label>
                     <input type="text" id="usuario">
-                    <button id='start'>Start</button>
-                </div>
+                    <button id='start'>Start</button> -->
+                 <form action="onsubmit" >
+                    <h4>Login</h4>
+                        <div class="login">
+                            <label for="email2">Email:</label>
+                            <input type="email2" class="input_email" id="emailloginIn" name="email2" required >
+                        </div>
+                        <div class="login">
+                            <label for="psw">Contraseña:</label>
+                            <input type="password"  id="pswloguinIn">
+                        </div>
+                        <div class="login">
+                            <input type="button"  id="start" value="Login" class="boton">
+                        </div>
+                        <h4>Nuevo Usuario</h4>
+                        <div class="login">
+                            <label for="email">Email:</label>
+                            <input type="email" class="input_email" id="emailloguin" name="email1" required >
+                        </div>
+                        <div class="login">
+                            <label for="psw">Contraseña:</label>
+                            <input type="password" id="pswloguin">
+                        </div>
+                            <div class="login">
+                            <input type="button" id="btloguin" value="Crear" class="boton">
+                            </div>
+                        </form>
+                  </div>
         <!-- Parte de preguntas -->
                 <div id="div_questions">
                     <form class="formulario" name="pregunta1">
