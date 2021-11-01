@@ -249,13 +249,13 @@ querySnapshot.forEach((doc) => {
   console.log(doc.id, " => ", doc.data());
 });
 */
-const openQuestions2 = () =>{
-    document.getElementById('start').addEventListener('click',() =>{
+// const openQuestions2 = () =>{
+//     document.getElementById('start').addEventListener('click',() =>{
       
-        const UpdateScore = doc(db, "User", "iZUZjQhnEGN0dyZwPfnQASGyBZX2");
-        await updateDoc(UpdateScore, {
-          score: 6
-        });
-    })
-}
-openQuestions2()
+//         const UpdateScore = doc(db, "User", "iZUZjQhnEGN0dyZwPfnQASGyBZX2");
+//         await updateDoc(UpdateScore, {
+//           score: 6
+//         });
+//     })
+// }
+// openQuestions2()
