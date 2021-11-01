@@ -3,7 +3,6 @@
 const openQuestions = () =>{
     document.getElementById('start').addEventListener('click',() =>{
         document.getElementById('div_enter').style.display = 'none'
-
         document.getElementById('div_questions').style.display = 'flex'
       
     })
@@ -12,6 +11,7 @@ openQuestions()
 
 //Fetch para recoger informacion de la API
 
+let infoAPI=''
 let respuestas = []
 const endpoint = 'https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple'
 const getInfo = async () =>{
@@ -103,11 +103,13 @@ getInfo()
 /**********************************FIREBASE**********************************************/
 /****************************************************************************************/
 
+
+
 console.log("Inicio firebase");
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js";
-import { getFirestore, collection, getDocs,setDoc, doc,addDoc,updateDoc, deleteField,getDoc } from 'https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js';
+import { getFirestore, collection, getDocs,setDoc, doc,addDoc,updateDoc, deleteField,getDoc ,where} from 'https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js';
 import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,sendEmailVerification } from 'https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js';
 
 
@@ -118,7 +120,7 @@ const firebaseConfig = {
     storageBucket: "quiz01-99925.appspot.com",
     messagingSenderId: "241827102095",
     appId: "1:241827102095:web:5a200235c5f078b82f9ffa"
-    };
+};
     
     // Initialize Firebase /* INICIALIZO LOS MUDULOS  DE FIRESTORE
     const app = initializeApp(firebaseConfig);
@@ -126,7 +128,7 @@ const firebaseConfig = {
     const auth = getAuth(app);
 
    
-//Genero las variables de Score y factual para capturar el momento de jugar
+//Genero las variables de Score y f_actual para capturar el momento de jugar
     const score = 0;
     const hoy = new Date();
     const day = hoy.getDate();
@@ -154,12 +156,16 @@ const firebaseConfig = {
                   // Signed in
                   const user = userCredential.user;
                    userid= user.uid
+                   console.log()
+                   
 
                 })
                 .catch((error) => {
                   const errorCode = error.code;
                   const errorMessage = error.message;
-                  console.log(errorCode+errorMessage)
+                  console.log(errorCode+errorCode)
+                  alert("Gracias por crear tu cuenta ahora logueate ;)")
+                  location.reload();
                
                 });
           })
@@ -174,34 +180,32 @@ let useruid=''
     const password = document.getElementById("pswloguinIn").value 
           
 signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        useruid=user.uid
-        /**Aqui capturo del objeto user el .uid y el .email y lo meto en la coleccion "user"* **/
-        setDoc (doc(db,"User",user.uid),{
-        email: email,
-        uid : useruid ,
-        score : score
 
-        });
+            .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+                useruid=user.uid
+                /**Aqui capturo del objeto user el .uid y el .email y lo meto en la coleccion "user"* **/
+                setDoc (doc(db,"User",user.uid),{
+                email: email,
+                uid : useruid ,
+                score : score
+
+                });
                     // ...
                 alert("Loguin Correcto Bienvenido al Quiz")
             
-                //location.reload();
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorCode+errorMessage)
-            alert("Cuenta o contaseña Incorrecta")
-    });
+                        //location.reload();
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.log(errorCode+errorMessage)
+                    alert("Cuenta o contaseña Incorrecta")
+            });
           
 })
 
-
-         
-console.log("fuera uid"+auth.currentUser.uid )
 
 
 
@@ -218,30 +222,40 @@ await updateDoc(UpdateScore, {
 /*PARA TRAER LOS NOMBRES Y PUNTUACIONES PARA LA GRAFICA*/
 let nombre=''
 let scorebck=''
-
+let data=[]
 const querySnapshot = await getDocs(collection(db, "User"));
 querySnapshot.forEach((doc) => {
   // doc.data() is never undefined for query doc snapshots
   
-   nombre= doc.data().email;
+   
+   nombre=doc.data().email
    scorebck = doc.data().score; 
    console.log(nombre,scorebck)
 
  // return nombre,score
 });
 
-console.log(nombre,scorebck)
+
 
 //console.log("Fin  firebase");
 
 
 /*
-const q = query(collection(db, "user"), where("uid", "==", true));
+const q = querySnapshot(collection(db, "user"), where("uid", "==", true));
 
-const querySnapshot = await getDocs(q);
+ querySnapshot = await getDocs(q);
 querySnapshot.forEach((doc) => {
   // doc.data() is never undefined for query doc snapshots
   console.log(doc.id, " => ", doc.data());
 });
-
 */
+const openQuestions2 = () =>{
+    document.getElementById('start').addEventListener('click',() =>{
+      
+        const UpdateScore = doc(db, "User", "iZUZjQhnEGN0dyZwPfnQASGyBZX2");
+        await updateDoc(UpdateScore, {
+          score: 6
+        });
+    })
+}
+openQuestions2()
