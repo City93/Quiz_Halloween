@@ -231,17 +231,17 @@ await updateDoc(UpdateScore, {
 /*PARA TRAER LOS NOMBRES Y PUNTUACIONES PARA LA GRAFICA*/
 
 let nombre=''
-let scorebck=''
+let score2=''
+let fecha=''
 let datos=[]
 const querySnapshot = await getDocs(collection(db, "User"));
 querySnapshot.forEach((doc) => {
   // doc.data() is never undefined for query doc snapshots
-  
-   
+
    nombre=doc.data().email;
-   scorebck =doc.data().score; 
-   datos =  [nombre,scorebck]
-   //console.log(nombre,scorebck)
+   score2 =doc.data().score; 
+   fecha = doc.data().fecha
+   console.log(nombre,score2,fecha)
 
 
  // return nombre,score
