@@ -1,13 +1,21 @@
 // Event listener que cambia el display de intro y preguntas para simular SPA
 
+let user2=''
+
 const openQuestions = () =>{
     document.getElementById('start').addEventListener('click',() =>{
         document.getElementById('div_enter').style.display = 'none'
         document.getElementById('div_questions').style.display = 'flex'
+        user2 = auth.currentUser.uid;
+        console.log("hola"+user2)
+
+
       
     })
 }
 openQuestions()
+
+console.log("hola2"+user2)
 
 //Fetch para recoger informacion de la API
 
@@ -141,7 +149,7 @@ const firebaseConfig = {
 
 
 /**BOTON CLICK PARA NUEVAS CUENTAS **/
-    const userid ='';
+ 
 
     if(document.getElementById("btloguin") != null){
 
@@ -155,9 +163,6 @@ const firebaseConfig = {
                 .then((userCredential) => {
                   // Signed in
                   const user = userCredential.user;
-                   userid= user.uid
-                   console.log()
-                   
 
                 })
                 .catch((error) => {
@@ -189,9 +194,13 @@ signInWithEmailAndPassword(auth, email, password)
                 setDoc (doc(db,"User",user.uid),{
                 email: email,
                 uid : useruid ,
-                score : score
+                score : score,
+                fecha : factual
 
                 });
+
+
+            console.log("hola3"+useruid)
                     // ...
                 alert("Loguin Correcto Bienvenido al Quiz")
             
@@ -220,20 +229,24 @@ await updateDoc(UpdateScore, {
 
 
 /*PARA TRAER LOS NOMBRES Y PUNTUACIONES PARA LA GRAFICA*/
+
 let nombre=''
 let scorebck=''
-let data=[]
+let datos=[]
 const querySnapshot = await getDocs(collection(db, "User"));
 querySnapshot.forEach((doc) => {
   // doc.data() is never undefined for query doc snapshots
   
    
-   nombre=doc.data().email
-   scorebck = doc.data().score; 
-   console.log(nombre,scorebck)
+   nombre=doc.data().email;
+   scorebck =doc.data().score; 
+   datos =  [nombre,scorebck]
+   //console.log(nombre,scorebck)
+
 
  // return nombre,score
-});
+}
+);
 
 
 
@@ -249,13 +262,15 @@ querySnapshot.forEach((doc) => {
   console.log(doc.id, " => ", doc.data());
 });
 */
-const openQuestions2 = () =>{
-    document.getElementById('start').addEventListener('click',() =>{
+// const openQuestions2 = () =>{
+//     document.getElementById('start').addEventListener('click',() =>{
       
-        const UpdateScore = doc(db, "User", "iZUZjQhnEGN0dyZwPfnQASGyBZX2");
-        await updateDoc(UpdateScore, {
-          score: 6
-        });
-    })
-}
-openQuestions2()
+//         const UpdateScore = doc(db, "User", "iZUZjQhnEGN0dyZwPfnQASGyBZX2");
+//         await updateDoc(UpdateScore, {
+//           score: 6
+//         });
+//     })
+// }
+// openQuestions2()
+
+
