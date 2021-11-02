@@ -82,23 +82,29 @@ getInfo()
                 document.getElementById('q4').innerHTML = infoAPI.respuestas[contador][3]
             //Cuando llega el contador a 9 (numero de preguntas - 1 ) el listener provoca que desaparezca la ventana de preguntas y devuelva los resultados
                 } else{
-                    document.getElementById('div_questions').style.display = 'none'
-                    document.getElementById('div_results').style.display = 'inherit'
+                   
                     console.log(infoAPI.correctas)
                     console.log(answerUser)
 
                     // Despues de realizar el quiz este codigo guarda el usuario y su resultado
                     // El resultado se obtiene comparando 2 arrays (Respuestas correctas y respuestas del usuario)
                     // Con los dos arrays se obtiene un array de true's y false's del que se filtra para sacar la longuitud el array con solo true's
-                    localStorage.setItem('Isa', JSON.stringify({
-                        score: infoAPI.correctas.map((el,i) => {
+                  
+                    
+                   
+                        let points = infoAPI.correctas.map((el,i) => {
                             if(el == answerUser[i]){
                                 return true
                             } else {
                                 return false
                             }
                         }).filter(Boolean).length
-                    }))
+
+                        console.log(points)
+                        actualiza(points,user2)
+
+                        document.getElementById("score").innerHTML = points
+               
                 }
             })     
         }
@@ -213,64 +219,13 @@ signInWithEmailAndPassword(auth, email, password)
 })
 
 
+async function actualiza(a,b) {
 
+const UpdateScore = doc(db, "User", b);
 
-/*PARA CAPTURAR EL ID DEL JUGADOR EN CURSO Y SETEARLE LA PUNTUACION AL FINAL
-
-
-const UpdateScore = doc(db, "User", "iZUZjQhnEGN0dyZwPfnQASGyBZX2");
+// Set the "capital" field of the city 'DC'
 await updateDoc(UpdateScore, {
-  score: 6
-});*/
-
-
-
-/*PARA TRAER LOS NOMBRES Y PUNTUACIONES PARA LA GRAFICA*/
-
-let nombre=''
-let score2=''
-let fecha=''
-let datos=[]
-const querySnapshot = await getDocs(collection(db, "User"));
-querySnapshot.forEach((doc) => {
-  // doc.data() is never undefined for query doc snapshots
-
-   nombre=doc.data().email;
-   score2 =doc.data().score; 
-   fecha = doc.data().fecha
-   console.log(nombre,score2,fecha)
-
-
- // return nombre,score
-}
-);
-
-
-
-//console.log("Fin  firebase");
-
-
-/*
-const q = querySnapshot(collection(db, "user"), where("uid", "==", true));
-
- querySnapshot = await getDocs(q);
-querySnapshot.forEach((doc) => {
-  // doc.data() is never undefined for query doc snapshots
-  console.log(doc.id, " => ", doc.data());
+    score: a
 });
-*/
-// const openQuestions2 = () =>{
-//     document.getElementById('start').addEventListener('click',() =>{
-      
-//         const UpdateScore = doc(db, "User", "iZUZjQhnEGN0dyZwPfnQASGyBZX2");
-//         await updateDoc(UpdateScore, {
-//           score: 6
-//         });
-//     })
-// }
-// openQuestions2()
 
-/****************************************************************************************/
-/**********************************GRAFICA**********************************************/
-/****************************************************************************************/
-
+}
