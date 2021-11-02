@@ -1,6 +1,6 @@
  body {
 
-  background-image: url("../assets/images/resultados.png");
+    background-image: url("../assets/images/resultados.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -70,11 +70,22 @@ p{
 .ct-series .ct-bar {
     /* Colour of your bars */
     stroke: rgb(248, 154, 3);
-    border: black 1px solid;
+    
     /* The width of your bars */
     stroke-width: 30px;
+  
     
   }
+  .div_h2{
+         font-weight: 500;
+        font-size: 10px;
+        font-family: 'Luckiest Guy', cursive;
+        background-color: rgba(255, 248, 220, 0.651);
+        color: black !important;
+       
+        
+  }
+ 
 /* --------Responsive---------------*/
 
 

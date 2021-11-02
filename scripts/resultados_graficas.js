@@ -50,6 +50,8 @@ console.log(graficScore)
 const options = {
   seriesBarDistance: 5,
   onlyInteger: true, //para que muestre solo numeros enteros
+  width: 500,
+  height: 350
  
 };
     
