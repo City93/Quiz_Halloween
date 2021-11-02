@@ -130,7 +130,7 @@ const firebaseConfig = {
     appId: "1:241827102095:web:5a200235c5f078b82f9ffa"
 };
     
-    // Initialize Firebase /* INICIALIZO LOS MUDULOS  DE FIRESTORE
+// Initialize Firebase /* INICIALIZO LOS MUDULOS  DE FIRESTORE
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
     const auth = getAuth(app);
@@ -149,9 +149,7 @@ const firebaseConfig = {
 
 
 /**BOTON CLICK PARA NUEVAS CUENTAS **/
- 
-
-    if(document.getElementById("btloguin") != null){
+     if(document.getElementById("btloguin") != null){
 
         document.getElementById("btloguin").addEventListener("click", ()=> {
   
@@ -177,8 +175,7 @@ const firebaseConfig = {
 }
 
 let useruid=''
-
-/*** BOTON PASSS LOGUININ */
+/*** BOTON PASSS LOGININ */
     document.getElementById("start").addEventListener("click", ()=> {
     console.log("entra sigIn")
     const email = document.getElementById("emailloginIn").value 
@@ -273,4 +270,7 @@ querySnapshot.forEach((doc) => {
 // }
 // openQuestions2()
 
+/****************************************************************************************/
+/**********************************GRAFICA**********************************************/
+/****************************************************************************************/
 

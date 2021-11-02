@@ -70,8 +70,9 @@ p{
 .ct-series .ct-bar {
     /* Colour of your bars */
     stroke: rgb(248, 154, 3);
+    border: black 1px solid;
     /* The width of your bars */
-    stroke-width: 50px;
+    stroke-width: 30px;
     
   }
 /* --------Responsive---------------*/
