@@ -18,7 +18,8 @@ h1 {
     color:rgb(14, 14, 14);
     text-align: center;
     font-family: 'Permanent Marker', cursive;
-    padding: 20px;
+    padding: 20px 20px 0px 20px;
+    margin-bottom: 0px;
     text-shadow: 2px 4px 2px rgb(250, 247, 247); 
    
 }
@@ -33,66 +34,60 @@ h2{
     text-align: center;
     font-family: 'Luckiest Guy', cursive;
     margin-bottom: 50px;
-   
-
 }
 
 h3 {
-
     color:rgb(17, 16, 16);
     text-align: center;
     font-family: 'Irish Grover', cursive;
-    font-size: 25px;
+    font-size: 30px;
+    margin: 20px 0 40px 0;
+}
+h4{
+    margin: 10px 0;
+    font-size: 20px;
+    font-family: 'Permanent Marker', cursive;
+    letter-spacing: 3px;
+    color: #f26724;
+    margin-top: 30px;
 }
 
 .login{
     display: flex;
     justify-content: center;
 }
-
+.login input{
+    background-color: #f49748;
+    margin-bottom: 10px;
+    border: none;
+    padding: 5px 25px;
+    border-radius: 10px;
+}
 /* estilo para los input entrada y botones*/
 
 #btnuser{
     display: flex;
 }
 #div_enter{
-    border: rgb(255, 255, 255) 5px ridge;
-    box-shadow: 6px 8px 8px rgb(87, 83, 83);
+    border: rgba(243, 114, 54, 0.315) 5px solid;
+    /* box-shadow: 6px 8px 8px rgb(87, 83, 83); */
     margin:0 auto;
     width:500px;
-    height: 350px;
+    height: 400px;
     border-radius:8px;
     color:rgb(17, 16, 16);
     font-weight:700;
     text-align: center;   
     background-color: rgb(247, 239, 247);
-    display: default;
- 
-    
+    display: default;    
 }
 
-.input_email{
-    padding:0px 7px 0px 50px;
-    margin-bottom: 5px;
+#start, #btloguin{
+    margin-top: 5px;
 }
 
-#start{
-    margin-top: 5px;
-}
-#btloguin{
-    margin-top: 5px;
-}
 
 /*Estilo de formulario-preguntas*/
-
-form{
-    font-family: 'Luckiest Guy', cursive;
-    align-items: center;
-    
-}
-.preguntas{
-    margin-left: 10px;
-}
 
 .q1{
 
@@ -106,6 +101,14 @@ form{
     padding:10px;
     font-size: 20px;
 
+}
+
+.preguntas{
+    width: 75%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .q1:hover {
@@ -150,22 +153,36 @@ form{
      color: white;
 }
     
-.q4{
+.respuesta{
     background-color: rgb(168, 197, 64);
     border-radius: 5px;
     margin: 20px;
-    width: 350px;
+    width: 75%;
     height: 25px;
     list-style:"🔥";
     text-align: center;
     padding:10px;
     font-size: 20px;
 }
-
-.q4:hover {
-    background-color: #177edf;
+.respuesta:hover {
+    background-color: rgb(27, 27, 27) !important;
     color: white;
+    box-shadow: 0 0 15px white;
 }
+#q2{
+    background-color: #d8b162;
+    list-style:"🧛‍♂️";
+}
+#q3{
+    background-color: #b9775a;
+    list-style:"🎃";
+}
+
+#q4{
+    background-color: #943b9b;
+    list-style:"👻";
+}
+
 
 
 .title_quiz1  {
@@ -176,14 +193,16 @@ form{
 
 #div_questions {
     border: rgb(233, 225, 225) 5px ridge;
-    width: 75vh;
-    height: 50vh;
+    width: 75%;
+    height: 600px;
     margin:0 auto;
-    padding: 5px 30px;
+    /* padding: 5px 30px; */
     border-radius:1px;
     background: rgb(28, 28, 29);
-    display:none;
-    align-items: center;
+    display: none;
+    font-size: 1rem;
+    font-family: 'Luckiest Guy', cursive;
+    justify-content: center;
 
 }
 
@@ -198,122 +217,55 @@ form{
     background-color: #df17c4;
     color: white;
 }
+.boton{
+    border-radius: 50px;
+    border: none;
+    padding: 6px 30px;
+}
+#start ,#btloguin{
+    padding: 10px 30px;
+    border-radius: 40px;
+    background-color: #f26724;
+    color: white;
+    font-family: 'Permanent Marker', cursive;
+    letter-spacing: 3px;
+}
+#start:hover ,#btloguin:hover{
+    background-color: black;
+    transition: background-color 0.5s ease;
+}
+#emailloginIn, #pswloguinIn, #emailloguin, #pswloguin{
+    font-family: sans-serif;
+    font-size: 15px;
+}
+#emailloginIn:focus, #pswloguinIn:focus, #emailloguin:focus, #pswloguin:focus{
+    outline: #f26724 solid 2px;
+}
 
 
 /*Responsive*/
 @media screen and (max-width: 780px) {
     #div_questions {
-        border: rgb(233, 225, 225) 5px ridge;
-        width: 50vh;
-        height: 45vh;
-        margin:0 auto;
-        padding: 5px 30px;
-        border-radius:1px;
-        background: rgb(28, 28, 29);
+        background-color: rgba(255, 255, 255, 0.192);
+        color: black;
         display:none;
-        align-items: center;
-    
+        font-size: 13px;
+        width: 100%;
+        border: none;
+    }
+    #div_questions:hover{
+        background-image: none;
+    }
+    .respuesta{
+        width: 100%;
+    }
+    h2{
+        color: black;
+    }
+    ul.preguntas{
+        padding: 0;
     }
     
-    
-}
-@media screen and (max-width:776px) {
-    #div_questions {
-        border: rgb(233, 225, 225) 5px ridge;
-        width: 50vh;
-        height: 45vh;
-        margin:0 auto;
-        padding: 5px 10px;
-        border-radius:1px;
-        background: rgb(28, 28, 29);
-        display:none;
-        align-items: center;
-    
-    }
-
-    h2 {
-        color: #fff;
-        text-align: center;
-        font-family: 'Luckiest Guy', cursive;
-        margin-bottom: 11px;
-}
-
-.preguntas {
-    margin-left: -24px;
-}
-    
-    .q1{
-
-        background-color: #d8b162;
-        border-radius: 5px;
-        margin: 20px;
-        width: 350px;
-        height: 25px;
-        list-style:"🧛‍♂️";
-        text-align: center;
-        padding:10px;
-        font-size: 20px;
-    
-    }
-    
-    .q1:hover {
-        background-color: #177edf;
-        color: white;
-    }
-        
-    
-    .q2{
-    
-        background-color: #b9775a;
-        border-radius: 5px;
-        margin: 20px;
-        width: 350px;
-        height: 25px;
-        list-style:"🎃";
-        text-align: center;
-        padding:10px;
-        font-size: 20px;
-    }
-    
-    .q2:hover {
-        background-color: #177edf;
-        color: white;
-    }
-    
-        
-    .q3{
-        background-color: #943b9b;
-        border-radius: 5px;
-        margin: 20px;
-        width: 350px;
-        height: 25px;
-        list-style:"👻";
-        text-align: center;
-        padding:10px;
-        font-size: 20px;
-    }
-    
-    .q3:hover {
-        background-color: #177edf;
-         color: white;
-    }
-        
-    .q4{
-        background-color: rgb(168, 197, 64);
-        border-radius: 5px;
-        margin: 20px;
-        width: 350px;
-        height: 15px;
-        list-style:"🔥";
-        text-align: center;
-        padding:10px;
-        font-size: 20px;
-    }
-    
-    .q4:hover {
-        background-color: #177edf;
-        color: white;
-    }
     
 }
  
@@ -325,4 +277,3 @@ form{
 /*@media (min-width:1281px) { /* hi-res laptops and desktops*/ 
     
    
-

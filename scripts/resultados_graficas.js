@@ -3,6 +3,9 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase
 import { getFirestore, collection, limit,query,getDocs,setDoc, doc,addDoc,updateDoc, deleteField,getDoc ,where} from 'https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js';
 import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,sendEmailVerification } from 'https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js';
 
+let usuario;
+let score;
+const urlApi=('');
 
 const firebaseConfig = {
     apiKey: "AIzaSyD48ZjmBUbMIsvTLYzntcRcHkuh-Aft8-c",
