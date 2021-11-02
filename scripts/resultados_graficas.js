@@ -23,17 +23,17 @@ const firebaseConfig = {
 
 
 /*leer una coleccion de firebase*/
-const q=query(collection(db,"UserQuiz"),limit(10));
+const q=query(collection(db,"User"),limit(10));
 let rankinUrl="";
-let grapichsName=[];
-let graficPuntos=[];
+let grapichsEmail=[];
+let graficScore=[];
 
 const querySnapshot=await getDocs(q);
 //para entrar al usuario y su partida
 querySnapshot.forEach(doc =>{
   rankinUrl=doc.data()
-  grapichsName.push(rankinUrl.name)
-  graficPuntos.push(rankinUrl.puntos)
+  grapichsEmail.push(rankinUrl.email)
+  graficScore.push(rankinUrl.score)
 console.log(rankinUrl)
 
 });
