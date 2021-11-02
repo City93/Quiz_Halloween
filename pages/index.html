@@ -5,51 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto quiz </title>
+
     <link rel="stylesheet" href="../styles/styles.css">
+<!--link normalize-->
     <link rel="stylesheet" href="../styles/normalize.css">
-    
-    <script src="../scripts/scripts.js" defer></script>
-    <script type="module" src="../scripts/firebase.js" defer></script>
+<!--link scripts-->
+    <!-- <script  src="../scripts/scripts.js" ></script> -->
+    <script defer type="module" src="../scripts/scripts.js" ></script>
     <script defer src="../scripts/resultados_graficas.js"></script>
-<!--Links para grafica-->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
-    <script defer src="./scripts/resultados_graficas.js"></script>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
-    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+
+<!--links para estilo de letras-->
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Zen+Maru+Gothic:wght@300;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Permanent+Marker&family=Qahiri&family=Zen+Kurenaido&family=Zen+Maru+Gothic:wght@300;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Permanent+Marker&family=Poppins:wght@300&family=Qahiri&family=Zen+Kurenaido&family=Zen+Maru+Gothic:wght@300;500&display=swap" rel="stylesheet">
 
 </head>
     <body class="body_index" id="body_index2">
-        <main id="main">
         <!-- Inicio -->
             <nav>
                 <h1>Quiz Halloween</h1>
+                <h3>Welcome to the quiz</h3>
             </nav>
-        
+        <!--Pagina de inicio-->
             <div id="btnuser">
                 <div id="div_enter">
-                    <h3>Welcome to the quiz</h3>
-                    <label>Nombre</label>
+                    <!-- <label>Nombre</label>
                     <input type="text" id="usuario">
-                    <button id='start'>Start</button>
-                </div>
+                    <button id='start'>Start</button> -->
+                <form action="onsubmit" >
+                    <h4>Login</h4>
+                        <div class="login">
+                            <input type="email2" class="input_email" id="emailloginIn" name="email2" placeholder="email" required >
+                        </div>
+                        <div class="login">
+                            <input type="password"  id="pswloguinIn" placeholder="password">
+                        </div>
+                        <div class="login">
+                            <input type="button"  id="start" value="Login" class="boton">
+                        </div>
+                    <h4>Nuevo Usuario</h4>
+                        <div class="login">
+                            <input type="email" class="input_email" id="emailloguin" name="email1" placeholder="email" required >
+                        </div>
+                        <div class="login">
+                            <input type="password" id="pswloguin" placeholder="password">
+                        </div>
+                        <div class="login">
+                            <input type="button" id="btloguin" value="Crear" class="boton">
+                        </div>
+                </form>
+            </div>
         <!-- Parte de preguntas -->
                 <div id="div_questions">
-                    <form class="formulario" name="pregunta1">
                         <ul class="preguntas">
                             <h2 id="question">¿?</h2>
-                            <li class="q1" id='q1'>
+                            <li class="respuesta" id='q1'>
                                 <input type="radio" id="p1" name="p1" value="1">
                                     <label for="p1"> </label><br>
                             </li>
-                            <li class="q2" id='q2'>
+                            <li class="respuesta" id='q2'>
                                 <input type="radio" id="p2" name="p1" value="2">
                                 <label for="p2"> </label><br>
                             </li>
-                            <li class="q3" id='q3'>
+                            <li class="respuesta" id='q3'>
                             <input type="radio" id="p3" name="p1" value="3">
                             <label for="p3"></label><br>
                             </li>
-                            <li class="q4" id='q4'>
+                            <li class="respuesta" id='q4'>
                                 <input type="radio" id="p4" name="p1" value="4">
                                 <label for="p3"> </label><br>
                             </li>
@@ -58,22 +80,7 @@
                             <!--<button id="bottom_index" type="button">Siguiente </button>-->
                     </form>
                 </div>
-        <!-- Parte de los resultados y graficas -->
-                <div id="div_results">
-                    <div id="score">
-                        <p>Aqui van los resultados</p>
-                    </div>
-                    <div class="ct-chart ct-perfect-fourth" id="graphics">
-                        <h2>Tu estadística</h2>
-                    </div>
-                </div>
-              
+        
            </div>
-
-        </main> 
-     </body>
-
-
-
-
+    </body>
 </html>
