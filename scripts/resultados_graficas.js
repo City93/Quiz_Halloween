@@ -37,14 +37,14 @@ querySnapshot.forEach(doc =>{
 console.log(rankinUrl)
 
 });
-console.log(grapichsName)
-console.log(graficPuntos)
+console.log(grapichsEmail)
+console.log(graficScore)
 
 //grafica
 
   const data = {
-      labels: grapichsName,
-      series: [graficPuntos]
+      labels: grapichsEmail,
+      series: [graficScore]
   };
   
 const options = {
