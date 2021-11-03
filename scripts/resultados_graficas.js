@@ -48,8 +48,8 @@ const options = {
   axisY:{
      onlyInteger: true, //para que muestre solo numeros enteros
   },
-  width: 500,
-  height: 350
+  width: 450,
+  height: 250
  
 };
     
