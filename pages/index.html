@@ -12,7 +12,7 @@
 <!--link scripts-->
     <!-- <script  src="../scripts/scripts.js" ></script> -->
     <script defer type="module" src="../scripts/scripts.js" ></script>
-    <script defer src="../scripts/resultados_graficas.js"></script>
+    <!-- <script defer src="../scripts/resultados_graficas.js"></script> -->
 
 <!--links para estilo de letras-->
 <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Zen+Maru+Gothic:wght@300;500&display=swap" rel="stylesheet">
@@ -41,7 +41,7 @@
                             <input type="password"  id="pswloguinIn" placeholder="password">
                         </div>
                         <div class="login">
-                            <input type="button"  id="start" value="Login" class="boton">
+                            <input type="button"  id="start" value="Start" class="boton">
                         </div>
                     <h4>Nuevo Usuario</h4>
                         <div class="login">
@@ -57,7 +57,7 @@
             </div>
         <!-- Parte de preguntas -->
                 <div id="div_questions">
-                        <ul class="preguntas">
+                        <ul class="preguntas" id='preguntas'>
                             <h2 id="question">¿?</h2>
                             <li class="respuesta" id='q1'>
                                 <input type="radio" id="p1" name="p1" value="1">
@@ -76,6 +76,7 @@
                                 <label for="p3"> </label><br>
                             </li>
                             </ul>
+                            <a href="../pages/grafica.html"><input type="button" id="resultados" value="Ver resultados" class="boton" ></a>
                 
                             <!--<button id="bottom_index" type="button">Siguiente </button>-->
                     </form>

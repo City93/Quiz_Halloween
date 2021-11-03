@@ -7,15 +7,11 @@ const openQuestions = () =>{
         document.getElementById('div_enter').style.display = 'none'
         document.getElementById('div_questions').style.display = 'flex'
         user2 = auth.currentUser.uid;
-        console.log("hola"+user2)
-
-
-      
+        // console.log("hola"+user2)      
     })
 }
 openQuestions()
 
-console.log("hola2"+user2)
 
 //Fetch para recoger informacion de la API
 
@@ -82,7 +78,8 @@ getInfo()
                 document.getElementById('q4').innerHTML = infoAPI.respuestas[contador][3]
             //Cuando llega el contador a 9 (numero de preguntas - 1 ) el listener provoca que desaparezca la ventana de preguntas y devuelva los resultados
                 } else{
-                   
+                    document.getElementById('preguntas').style.display = 'none'
+                    document.getElementById('resultados').style.display = 'flex'
                     console.log(infoAPI.correctas)
                     console.log(answerUser)
 
@@ -90,7 +87,7 @@ getInfo()
                     // El resultado se obtiene comparando 2 arrays (Respuestas correctas y respuestas del usuario)
                     // Con los dos arrays se obtiene un array de true's y false's del que se filtra para sacar la longuitud el array con solo true's
                   
-                    
+
                    
                         let points = infoAPI.correctas.map((el,i) => {
                             if(el == answerUser[i]){
@@ -102,6 +99,8 @@ getInfo()
 
                         console.log(points)
                         actualiza(points,user2)
+
+                        localStorage.setItem('user', points)
 
                         document.getElementById("score").innerHTML = points
                
@@ -119,7 +118,7 @@ getInfo()
 
 
 
-console.log("Inicio firebase");
+// console.log("Inicio firebase");
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js";
@@ -181,9 +180,9 @@ const firebaseConfig = {
 }
 
 let useruid=''
-/*** BOTON PASSS LOGININ */
+/*** BOTON PASS LOGIN IN */
     document.getElementById("start").addEventListener("click", ()=> {
-    console.log("entra sigIn")
+    console.log("entra sign In")
     const email = document.getElementById("emailloginIn").value 
     const password = document.getElementById("pswloguinIn").value 
           
@@ -205,7 +204,7 @@ signInWithEmailAndPassword(auth, email, password)
 
             console.log("hola3"+useruid)
                     // ...
-                alert("Loguin Correcto Bienvenido al Quiz")
+                alert("Login Correcto Bienvenido al Quiz")
             
                         //location.reload();
                 })
@@ -213,7 +212,7 @@ signInWithEmailAndPassword(auth, email, password)
                     const errorCode = error.code;
                     const errorMessage = error.message;
                     console.log(errorCode+errorMessage)
-                    alert("Cuenta o contaseña Incorrecta")
+                    alert("Si quieres guardar tu puntuación debes entrar con una cuenta correcta")
             });
           
 })
@@ -223,7 +222,6 @@ async function actualiza(a,b) {
 
 const UpdateScore = doc(db, "User", b);
 
-// Set the "capital" field of the city 'DC'
 await updateDoc(UpdateScore, {
     score: a
 });

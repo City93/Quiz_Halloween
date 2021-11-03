@@ -222,6 +222,19 @@ h4{
     border: none;
     padding: 6px 30px;
 }
+#resultados{
+    height: 100px;
+    margin-top: 25%;
+    width: 100%;
+    font-size: 50px;
+    font-family: 'Irish Grover', cursive;
+    display: none;
+    text-align: center;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+}
 #start ,#btloguin{
     padding: 10px 30px;
     border-radius: 40px;
