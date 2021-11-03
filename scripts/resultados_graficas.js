@@ -1,11 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js";
-import { getFirestore, collection, limit,query,getDocs,setDoc, doc,addDoc,updateDoc, deleteField,getDoc ,where} from 'https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js';
-import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,sendEmailVerification } from 'https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js';
-
-let usuario;
-let score;
-const urlApi=('');
+import { getFirestore, collection, limit,query,getDocs} from 'https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js';
+import { getAuth} from 'https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js';
 
 const firebaseConfig = {
     apiKey: "AIzaSyD48ZjmBUbMIsvTLYzntcRcHkuh-Aft8-c",
@@ -49,7 +45,9 @@ console.log(graficScore)
   
 const options = {
   seriesBarDistance: 5,
-  onlyInteger: true, //para que muestre solo numeros enteros
+  axisY:{
+     onlyInteger: true, //para que muestre solo numeros enteros
+  },
   width: 500,
   height: 350
  
@@ -92,5 +90,9 @@ new Chartist.Bar('.ct-chart', data, options, responsiveOptions);
 
   return this;
 }*/
+
+  let key = localStorage.key(0);
+
+document.getElementById('score').innerText = localStorage.getItem(key)
   
  
