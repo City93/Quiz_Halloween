@@ -1,8 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js";
-import { getFirestore, collection, limit,query,getDocs,setDoc, doc,addDoc,updateDoc, deleteField,getDoc ,where} from 'https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js';
-import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,sendEmailVerification } from 'https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js';
-
+import { getFirestore, collection, limit,query,getDocs} from 'https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js';
+import { getAuth} from 'https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js';
 
 const firebaseConfig = {
     apiKey: "AIzaSyD48ZjmBUbMIsvTLYzntcRcHkuh-Aft8-c",
@@ -20,33 +19,37 @@ const firebaseConfig = {
 
 
 /*leer una coleccion de firebase*/
-const q=query(collection(db,"UserQuiz"),limit(10));
+const q=query(collection(db,"User"),limit(10));
 let rankinUrl="";
-let grapichsName=[];
-let graficPuntos=[];
+let grapichsEmail=[];
+let graficScore=[];
 
 const querySnapshot=await getDocs(q);
 //para entrar al usuario y su partida
 querySnapshot.forEach(doc =>{
   rankinUrl=doc.data()
-  grapichsName.push(rankinUrl.name)
-  graficPuntos.push(rankinUrl.puntos)
+  grapichsEmail.push(rankinUrl.email)
+  graficScore.push(rankinUrl.score)
 console.log(rankinUrl)
 
 });
-console.log(grapichsName)
-console.log(graficPuntos)
+console.log(grapichsEmail)
+console.log(graficScore)
 
 //grafica
 
   const data = {
-      labels: grapichsName,
-      series: [graficPuntos]
+      labels: grapichsEmail,
+      series: [graficScore]
   };
   
 const options = {
   seriesBarDistance: 5,
-  onlyInteger: true, //para que muestre solo numeros enteros
+  axisY:{
+     onlyInteger: true, //para que muestre solo numeros enteros
+  },
+  width: 450,
+  height: 250
  
 };
     
@@ -87,5 +90,9 @@ new Chartist.Bar('.ct-chart', data, options, responsiveOptions);
 
   return this;
 }*/
+
+  let key = localStorage.key(0);
+
+document.getElementById('score').innerText = localStorage.getItem(key)
   
  
