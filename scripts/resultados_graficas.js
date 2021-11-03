@@ -93,6 +93,6 @@ new Chartist.Bar('.ct-chart', data, options, responsiveOptions);
 
   let key = localStorage.key(0);
 
-document.getElementById('score').innerText = localStorage.getItem(key)
+document.getElementById('score').innerText = `${localStorage.getItem(key)} / 10 `
   
  
